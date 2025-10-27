@@ -26,6 +26,10 @@
     "npm-run-all2": "^8.0.4",
     "typescript": "~5.8.0",
     "vite": "^7.0.6",
+<<<<<<< HEAD
+=======
+    "vite-plugin-vue-devtools": "^8.0.0",
+>>>>>>> a22ff369f140829cab5940448bde39a3a3d8ff77
     "vue-tsc": "^3.0.4"
   }
 }

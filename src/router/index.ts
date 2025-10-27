@@ -29,6 +29,7 @@ const router = createRouter({
       component: News,
       children: [
         {
+<<<<<<< HEAD
           name: "xijie",
           path: "detail/:id/:title/:content?",
           component: Detail,
@@ -38,6 +39,11 @@ const router = createRouter({
           // props(route){
           //   return route.query;  
           // }
+=======
+          // name: "xijie",
+          path: "detail",
+          component: Detail,
+>>>>>>> a22ff369f140829cab5940448bde39a3a3d8ff77
         },
       ],
     },
