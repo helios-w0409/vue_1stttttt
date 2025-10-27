@@ -4,7 +4,6 @@
     <div class="list">
       <ul>
         <li v-for="value in news" :key="value.id">
-<<<<<<< HEAD
           <!-- 写法一 -->
           <!-- <router-link :to="`/news/detail/${value.id}/${value.title}/${value.content}`">{{ value.title }}</router-link> -->
            <!-- 写法二 -->
@@ -19,9 +18,6 @@
             }
             ">{{ value.title }}</router-link>
             <!-- 实现按钮跳转新闻信息的功能 -->
-=======
-          <router-link to="/news/detail">{{ value.title }}</router-link>
->>>>>>> a22ff369f140829cab5940448bde39a3a3d8ff77
         </li>
       </ul>
     </div>
@@ -36,15 +32,9 @@
 import { ref } from "vue";
 import { RouterView, RouterLink } from "vue-router";
 const news = ref([
-<<<<<<< HEAD
   { id: 1, title: "新闻1" ,content:"内容1"},
   { id: 2, title: "新闻2" ,content:"内容2"},
   { id: 3, title: "新闻3" ,content:"内容3"},
-=======
-  { id: 1, title: "新闻1" },
-  { id: 2, title: "新闻2" },
-  { id: 3, title: "新闻3" },
->>>>>>> a22ff369f140829cab5940448bde39a3a3d8ff77
 ]);
 </script>
 

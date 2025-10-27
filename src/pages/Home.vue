@@ -2,7 +2,6 @@
   <div class="home"></div>
 </template>
 
-<<<<<<< HEAD
 <script lang="ts" setup name="Home">
 // 在此页面3秒后跳转到新闻页面 
 import { onMounted } from 'vue';
@@ -14,10 +13,9 @@ const router = useRouter();
     },3000)
 
   })
+  console.log("ceshi");
+  
 </script>
-=======
-<script lang="ts" setup name="Home"></script>
->>>>>>> a22ff369f140829cab5940448bde39a3a3d8ff77
 
 <style scoped>
 .home {
