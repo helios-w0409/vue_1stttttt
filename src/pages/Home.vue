@@ -13,7 +13,6 @@ const router = useRouter();
     },3000)
 
   })
-  console.log("ceshi");
   
 </script>
 
