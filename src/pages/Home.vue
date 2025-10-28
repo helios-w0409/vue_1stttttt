@@ -4,15 +4,15 @@
 
 <script lang="ts" setup name="Home">
 // 在此页面3秒后跳转到新闻页面 
-import { onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-const router = useRouter();
-  onMounted(()=>{
-    setTimeout(()=>{
-      router.push('/news')
-    },3000)
+// import { onMounted } from 'vue';
+// import { useRouter } from 'vue-router';
+// const router = useRouter();
+//   onMounted(()=>{
+//     setTimeout(()=>{
+//       router.push('/news')
+//     },3000)
 
-  })
+//   })
   
 </script>
 
