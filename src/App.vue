@@ -1,26 +1,12 @@
 <script lang="ts" setup>
-import { RouterView, RouterLink } from "vue-router";
+import Count from "./components/Count.vue";
+import LoveTalk from "./components/LoveTalk.vue";
 </script>
 
 <template>
   <div class="app">
-    <!-- 欢迎标语 -->
-    <h1 class="title">欢迎页面</h1>
-    <!-- 导航 -->
-    <div class="navigate">
-      <router-link to="/home" active-class="active">首页</router-link>
-      <!-- 这个active-class="active" 需要自己定义 写在css里面 -->
-      <router-link :to="{ name: 'xinwen' }" active-class="active">
-        新闻
-      </router-link>
-      <router-link :to="{ path: '/about' }" active-class="active"
-        >关于</router-link
-      >
-      <!-- 展示 -->
-      <div class="content">
-        <RouterView></RouterView>
-      </div>
-    </div>
+    <Count />
+    <LoveTalk />
   </div>
 </template>
 
