@@ -22,4 +22,9 @@ export const useCountStore = defineStore("count", {
       sum: 6,
     };
   },
+  getters: {
+    bigSum(): number {
+      return this.sum * 10;
+    },
+  },
 });
