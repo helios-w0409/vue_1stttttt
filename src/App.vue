@@ -1,22 +1,30 @@
 <script lang="ts" setup>
-import Count from "./components/Count.vue";
-import LoveTalk from "./components/LoveTalk.vue";
+import Head from "@/components/head.vue";
+import BodyLeft from "@/components/BodyLeft.vue";
+import BodyRight from "@/components/BodyRight.vue";
 </script>
 
 <template>
   <div class="app">
-    <Count />
-    <LoveTalk />
+    <div class="header">
+      <!-- 头部 -->
+      <Head />
+    </div>
+    <div class="body">
+      <div class="bodyLeft">
+        <!-- 左侧菜单栏 -->
+        <BodyLeft />
+      </div>
+      <div class="bodyRight">
+        <!-- 展示区 -->
+        <!-- 这个组件标签我觉得可以不要 直接写盒子样式 然后直接放展示路由 -->
+        <BodyRight />
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.active {
-  background-color: #6c63ff;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(108, 99, 255, 0.3);
-}
-
 /* 整体布局 */
 .app {
   display: flex;
@@ -29,45 +37,13 @@ import LoveTalk from "./components/LoveTalk.vue";
   color: #333;
   padding: 40px 20px;
 }
-
-/* 欢迎标题 */
-.title {
-  font-size: 36px;
-  font-weight: 700;
-  color: #444;
-  margin-bottom: 40px;
-  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+.body {
+  display: flex;
+  flex: 1;
 }
-
-/* 导航栏 */
-.navigate {
-  /* display: flex; */
-  gap: 30px;
-  margin-bottom: 60px;
-}
-
-.navigate a {
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  color: #555;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-/* 内容展示区 */
-.content {
-  width: 80%;
-  min-height: 200px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  /* display: flex; */
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  color: #666;
-  padding: 20px;
-}
+/* .bodyRight {
+  background-color: rgb(194, 225, 132);
+  height: 100%;
+  width: 1400px;
+} */
 </style>
