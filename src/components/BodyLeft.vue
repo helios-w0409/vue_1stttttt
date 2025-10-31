@@ -14,7 +14,7 @@ import { ref } from "vue";
 const LeftMenu = ref([
   { id: 1, content: "props" },
   { id: 2, content: "自定义事件" },
-  { id: 3, content: "mitt" },
+  { id: 3, content: "m itt" },
   { id: 4, content: "v-model" },
   { id: 5, content: "$attrs" },
   { id: 6, content: "$refs,$parent" },

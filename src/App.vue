@@ -2,6 +2,59 @@
 import Head from "@/components/head.vue";
 import BodyLeft from "@/components/BodyLeft.vue";
 import BodyRight from "@/components/BodyRight.vue";
+import { ref } from "vue";
+//引入
+import { useRouter } from "vue-router";
+// 优化想法:不存id index自己循环  或者直接用css修饰
+const LeftMenu = ref([
+  { id: 1, content: "props" },
+  { id: 2, content: "自定义事件" },
+  { id: 3, content: "mitt" },
+  { id: 4, content: "v-model" },
+  { id: 5, content: "$attrs" },
+  { id: 6, content: "$refs,$parent" },
+  { id: 7, content: "provide,inject" },
+  { id: 8, content: "pinia" },
+  { id: 9, content: "slot" },
+]);
+//获取实例
+const router = useRouter();
+
+function routeChange(index: number) {
+  let id = index + 1;
+  console.log(id);
+  switch (id) {
+    case 1:
+      router.push("/props");
+      break;
+    case 2:
+      router.push("/CustomEvent");
+      break;
+    case 3:
+      router.push("/mitt");
+      break;
+    case 4:
+      router.push("/vModel");
+      break;
+    case 5:
+      router.push("/attrs");
+      break;
+    case 6:
+      router.push("/refAndparent");
+      break;
+    case 7:
+      router.push("");
+      break;
+    case 8:
+      router.push("");
+      break;
+    case 9:
+      router.push("");
+      break;
+    default:
+      router.push("");
+  }
+}
 </script>
 
 <template>
@@ -10,15 +63,21 @@ import BodyRight from "@/components/BodyRight.vue";
       <!-- 头部 -->
       <Head />
     </div>
+
     <div class="body">
+      <!-- 左侧菜单栏 -->
       <div class="bodyLeft">
-        <!-- 左侧菜单栏 -->
-        <BodyLeft />
+        <ul>
+          <li v-for="(value, index) in LeftMenu" :key="value.id">
+            <p @click="routeChange(index)">
+              {{ value.id }}.{{ value.content }}
+            </p>
+          </li>
+        </ul>
       </div>
+      <!-- 展示区 -->
       <div class="bodyRight">
-        <!-- 展示区 -->
-        <!-- 这个组件标签我觉得可以不要 直接写盒子样式 然后直接放展示路由 -->
-        <BodyRight />
+        <router-view></router-view>
       </div>
     </div>
   </div>
@@ -40,10 +99,22 @@ import BodyRight from "@/components/BodyRight.vue";
 .body {
   display: flex;
   flex: 1;
+  width: 100%;
+  height: 100%;
 }
-/* .bodyRight {
+.bodyRight {
+  flex: 1;
+  /* 占满剩余空间 */
   background-color: rgb(194, 225, 132);
   height: 100%;
   width: 1400px;
-} */
+  margin-top: 30px;
+}
+/* 给标签写样式不用写. */
+ul li {
+  /* background-color: #333; */
+  margin-right: 200px;
+  list-style: none;
+  padding: 10px;
+}
 </style>

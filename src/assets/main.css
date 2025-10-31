@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 确保页面和根节点占满窗口 */
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
