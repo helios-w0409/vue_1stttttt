@@ -43,16 +43,16 @@ function routeChange(index: number) {
       router.push("/refAndparent");
       break;
     case 7:
-      router.push("");
+      router.push("/provideAndinject");
       break;
     case 8:
-      router.push("");
+      router.push("/pinia");
       break;
     case 9:
-      router.push("");
+      router.push("/slot");
       break;
     default:
-      router.push("");
+      console.log("没有找到对应的路由");
   }
 }
 </script>
@@ -69,7 +69,7 @@ function routeChange(index: number) {
       <div class="bodyLeft">
         <ul>
           <li v-for="(value, index) in LeftMenu" :key="value.id">
-            <p @click="routeChange(index)">
+            <p @click="routeChange(index)" active-class="active">
               {{ value.id }}.{{ value.content }}
             </p>
           </li>
@@ -116,5 +116,17 @@ ul li {
   margin-right: 200px;
   list-style: none;
   padding: 10px;
+}
+/* 悬停效果 */
+ul li:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+/* 点击高亮效果 */
+ul li.active {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  background-color: rgba(98, 243, 139, 0.1);
+  transform: translateY(-2px);
 }
 </style>
