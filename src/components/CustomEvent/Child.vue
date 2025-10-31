@@ -1,17 +1,13 @@
 <template>
   <div class="Child">
     <h2>子组件</h2>
-    <h3>孩子的玩具：{{ toy }}</h3>
-    <h3>父亲给的汽车：{{ car }}</h3>
+    <button @click="emit('news', '子组件向父组件发送数据')">发送数据</button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-const toy = ref("toy");
-
-// 接收父组件传递的参数
-defineProps(["car"]);
+const emit = defineEmits(["news"]);
 </script>
 
 <style scoped>

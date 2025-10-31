@@ -1,17 +1,21 @@
 <template>
   <div class="Father">
     <h1>父组件</h1>
-    <h2>父亲的汽车：{{ car }}</h2>
-    <!-- 给子组件传值 -->
-    <Child :car="car"></Child>
+    <!-- 在这里展示 子数据-->
+    <h2>子数据：{{ msg }}</h2>
+    <Child @news="test"></Child>
   </div>
 </template>
 
 <script setup lang="ts">
 import Child from "@/components/CustomEvent/Child.vue";
 import { ref } from "vue";
-//数据
-const car = ref("汽车");
+const msg = ref("");
+//父组件获取子组件的数据 子传父 自定义数据
+function test(data: string) {
+  console.log("测试");
+  msg.value = data;
+}
 </script>
 
 <style scoped>
