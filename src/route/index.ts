@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Props from "@/components/props/Father.vue";
 import CustomEvent from "@/components/CustomEvent/Father.vue";
-import Mitt from "@/components/mitt/mitt.vue";
+// import Mitt from "@/components/mitt/mitt.vue";
+import Mitt from "@/components/mitt/Father.vue";
 import vModel from "@/components/v-model/vModel.vue";
 import attrs from "@/components/attrs/attrs.vue";
 import refAndparent from "@/components/refAndparent/refAndparent.vue";

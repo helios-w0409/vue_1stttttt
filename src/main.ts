@@ -4,6 +4,7 @@ import App from "./App.vue";
 import { createPinia } from "pinia";
 import router from "./route";
 import "@/assets/main.css";
+import emitter from "./untils/emit";
 //创建一个应用
 const app = createApp(App);
 //创建pinia实例
