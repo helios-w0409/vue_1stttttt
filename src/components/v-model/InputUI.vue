@@ -6,6 +6,7 @@
       :value="xingming"
       @input="emit('update:xingming', (<HTMLInputElement>$event.target).value)"
     />
+    <!-- @input 监听输入框的变化 -->
 
     <!-- 先实现代码端向页面端的流动     v-bind-->
   </div>
