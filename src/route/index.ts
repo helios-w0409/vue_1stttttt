@@ -5,7 +5,7 @@ import CustomEvent from "@/components/CustomEvent/Father.vue";
 import Mitt from "@/components/mitt/Father.vue";
 import vModel from "@/components/v-model/vModel.vue";
 import attrs from "@/components/attrs/Grandpa.vue";
-import refAndparent from "@/components/refAndparent/refAndparent.vue";
+import refAndparent from "@/components/refAndparent/Father.vue";
 import provideAndinject from "@/components/provideAndinject/provideAndinject.vue";
 import pinia from "@/components/pinia/pinia.vue";
 import slot from "@/components/slot/slot.vue";
