@@ -10,6 +10,8 @@
 import { ref } from "vue";
 const toy = ref("玩具车");
 const book = ref("故事书");
+//允许父组件访问
+defineExpose({ toy, book });
 </script>
 
 <style scoped>

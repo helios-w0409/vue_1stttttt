@@ -10,6 +10,11 @@
 import { ref } from "vue";
 const computer = ref("笔记本电脑");
 const book = ref("编程书籍");
+
+defineExpose({
+  computer,
+  book,
+});
 </script>
 
 <style scoped>
