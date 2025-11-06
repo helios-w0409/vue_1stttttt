@@ -3,6 +3,7 @@
     <h2>子组件2</h2>
     <h2>电脑：{{ computer }}</h2>
     <h2>书籍：{{ book }}</h2>
+    <button @click="changeHome($parent)">修改父亲的房产</button>
   </div>
 </template>
 
@@ -10,6 +11,10 @@
 import { ref } from "vue";
 const computer = ref("笔记本电脑");
 const book = ref("编程书籍");
+
+function changeHome(parent: any) {
+  parent.house -= 1;
+}
 
 defineExpose({
   computer,

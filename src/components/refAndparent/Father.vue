@@ -15,12 +15,12 @@
 import Child1 from "./Child1.vue";
 import Child2 from "./Child2.vue";
 import { ref } from "vue";
-const house = ref("别墅");
+const house = ref(4);
 const c1 = ref();
 const child2 = ref();
 function getAll(x: any) {
-  console.log(x);
   // 打印全部信息
+  console.log(x);
 }
 function changeData() {
   // console.log(c1.value);
@@ -30,6 +30,8 @@ function changeData() {
 function changeComputer() {
   child2.value.computer = "MacBook Pro";
 }
+// 暴露数据
+defineExpose({ house });
 </script>
 
 <style scoped>
