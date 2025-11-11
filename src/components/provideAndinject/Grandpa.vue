@@ -1,7 +1,8 @@
 <template>
   <div class="grandpa">
     <h1>爷组件</h1>
-
+    <h2>{{ money }}</h2>
+    <h2>汽车的品牌：{{ car.brand }} 汽车的型号：{{ car.model }}</h2>
     <Father></Father>
     <!-- 传值给父组件 -->
   </div>
@@ -10,6 +11,21 @@
 <script setup lang="ts">
 import Father from "./Father.vue";
 import { ref } from "vue";
+import { provide } from "vue";
+const money = ref(100);
+const car = ref({
+  brand: "保时捷",
+  model: "911",
+});
+
+function changeMoney() {
+  money.value -= 2;
+}
+//提供数据 祖孙之间
+provide("money", { money, changeMoney }); //数值不能.value 会失去响应性
+provide("car", car);
+
+//实现子按钮修改爷爷的数据
 </script>
 
 <style scoped>
