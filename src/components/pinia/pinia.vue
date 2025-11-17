@@ -1,6 +1,7 @@
 <template>
   <div class="pinia">
     <h1>父组件</h1>
+    看之前的代码
     <div class="Children1">
       <h2 class="subtitle">子组件1</h2>
     </div>

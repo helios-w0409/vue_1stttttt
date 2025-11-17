@@ -1,10 +1,17 @@
 <template>
   <div class="slot">
     <h1>父组件</h1>
+    <div class="component">
+      <Categories title="热门游戏列表" />
+      <Categories title="今日美食城市" />
+      <Categories title="今日影视推荐" />
+    </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Categories from "./categories.vue";
+</script>
 
 <style scoped>
 /* 父组件样式 */
@@ -25,5 +32,10 @@
   font-size: 28px;
   font-weight: bold;
   margin: 0;
+}
+
+.component {
+  display: flex;
+  justify-content: space-evenly;
 }
 </style>
