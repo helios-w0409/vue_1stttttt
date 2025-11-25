@@ -1,14 +1,18 @@
 <template>
   <div class="categories">
-    <div class="head">
-      <slot name="titleGame">默认参数</slot>
-    </div>
-
-    <slot name="gameList">默认参数</slot>
+    <h2></h2>
+    <slot :game="game"></slot>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+let game = ref([
+  { id: "1", content: "游戏1" },
+  { id: "2", content: "游戏2" },
+  { id: "3", content: "游戏3" },
+]);
+</script>
 
 <style scoped>
 .categories {

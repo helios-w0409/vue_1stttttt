@@ -2,43 +2,39 @@
   <div class="slot">
     <h1>父组件</h1>
     <div class="component">
-      <!-- 具名插槽 -->
-      <Categories>
-        <template v-slot:gameList>
+      <categories>
+        <template #default="param">
           <ul>
-            <li v-for="game in gameList" :key="game.id">{{ game.content }}</li>
+            <li v-for="value in param.game" :key="value.id">
+              {{ value.content }}
+            </li>
           </ul>
         </template>
+      </categories>
 
-        <template v-slot:titleGame>
-          <h2 class="title">热门游戏列表</h2>
+      <categories>
+        <template #default="param">
+          <ol>
+            <li v-for="value in param.game" :key="value.id">
+              {{ value.content }}
+            </li>
+          </ol>
         </template>
-      </Categories>
-      <!--  <Categories title="今日美食城市">
-        <img :src="photoUrl" alt="图片" />
-      </Categories> -->
-      <Categories>
-        <template #gameList>
-          <video :src="videoUrl" controls></video>
+      </categories>
+
+      <categories>
+        <template #default="param">
+          <h2 v-for="value in param.game" :key="value.id">
+            {{ value.content }}
+          </h2>
         </template>
-        <template #titleGame>
-          <h2 class="title">今日视频推荐</h2>
-        </template>
-      </Categories>
+      </categories>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Categories from "./categories.vue";
-import { ref } from "vue";
-const gameList = ref([
-  { id: "1", content: "英雄联盟" },
-  { id: "2", content: "穿越火线" },
-  { id: "3", content: "王者荣耀" },
-]);
-const photoUrl = "https://images.unsplash.com/photo-1501785888041-af3ef285b470";
-const videoUrl = "https://www.w3schools.com/html/mov_bbb.mp4";
+import categories from "./categories.vue";
 </script>
 
 <style scoped>
