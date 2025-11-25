@@ -3,12 +3,12 @@
     <div class="head">
       {{ title }}
     </div>
+    <slot>默认参数</slot>
   </div>
 </template>
 
 <script setup lang="ts">
-let title = defineProps(["title"]);
-console.log(title);
+defineProps(["title"]);
 </script>
 
 <style scoped>

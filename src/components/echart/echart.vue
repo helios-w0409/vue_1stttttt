@@ -6,11 +6,16 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onBeforeUnmount, onMounted } from "vue";
 import * as echarts from "echarts";
+//定义一个变量  然后给他赋值 涉及局部定义变量 然后但是其他地方要用可以声明一个空的 然后 后面给它赋值
+let myChart: echarts.ECharts | null = null;
 onMounted(() => {
   const chartDom = document.getElementById("main");
-  const myChart = echarts.init(chartDom);
+  myChart = echarts.init(chartDom);
+
+  //在挂载的时候开始监听
+  window.addEventListener("resize", resize);
 
   myChart.setOption({
     title: {
@@ -30,6 +35,16 @@ onMounted(() => {
     ],
   });
 });
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", resize);
+});
+
+function resize() {
+  if (myChart) {
+    myChart.resize();
+  }
+}
 </script>
 
 <style scoped>
@@ -39,7 +54,7 @@ onMounted(() => {
   background-color: #ffffff;
 }
 #main {
-  width: 600px;
+  width: 100%;
   height: 400px;
   background-color: rgb(226, 188, 188);
 }
