@@ -1,15 +1,14 @@
 <template>
   <div class="categories">
     <div class="head">
-      {{ title }}
+      <slot name="titleGame">默认参数</slot>
     </div>
-    <slot>默认参数</slot>
+
+    <slot name="gameList">默认参数</slot>
   </div>
 </template>
 
-<script setup lang="ts">
-defineProps(["title"]);
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 .categories {

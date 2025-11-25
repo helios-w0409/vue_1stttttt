@@ -2,17 +2,28 @@
   <div class="slot">
     <h1>父组件</h1>
     <div class="component">
-      <!-- 默认插槽 -->
-      <Categories title="热门游戏列表">
-        <ul>
-          <li v-for="game in gameList" :key="game.id">{{ game.content }}</li>
-        </ul>
+      <!-- 具名插槽 -->
+      <Categories>
+        <template v-slot:gameList>
+          <ul>
+            <li v-for="game in gameList" :key="game.id">{{ game.content }}</li>
+          </ul>
+        </template>
+
+        <template v-slot:titleGame>
+          <h2 class="title">热门游戏列表</h2>
+        </template>
       </Categories>
-      <Categories title="今日美食城市">
+      <!--  <Categories title="今日美食城市">
         <img :src="photoUrl" alt="图片" />
-      </Categories>
-      <Categories title="今日影视推荐">
-        <video :src="videoUrl" controls></video>
+      </Categories> -->
+      <Categories>
+        <template #gameList>
+          <video :src="videoUrl" controls></video>
+        </template>
+        <template #titleGame>
+          <h2 class="title">今日视频推荐</h2>
+        </template>
       </Categories>
     </div>
   </div>
@@ -45,11 +56,11 @@ const videoUrl = "https://www.w3schools.com/html/mov_bbb.mp4";
 }
 
 /* 父组件标题 */
-.slot > h1 {
+/* .title {
   font-size: 28px;
   font-weight: bold;
   margin: 0;
-}
+} */
 
 .component {
   display: flex;
