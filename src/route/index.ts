@@ -10,6 +10,7 @@ import provideAndinject from "@/components/provideAndinject/Grandpa.vue";
 import pinia from "@/components/pinia/pinia.vue";
 import slot from "@/components/slot/slot.vue";
 import echart from "@/components/echart/echart.vue";
+import el from "@/components/el组件/el.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -52,6 +53,10 @@ const router = createRouter({
     {
       path: "/echart",
       component: echart,
+    },
+    {
+      path: "/el",
+      component: el,
     },
   ],
 });

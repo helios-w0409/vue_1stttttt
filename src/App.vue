@@ -17,6 +17,7 @@ const LeftMenu = ref([
   { id: 8, content: "pinia" },
   { id: 9, content: "slot" },
   { id: 10, content: "echart" },
+  { id: 11, content: "el" },
 ]);
 //获取实例
 const router = useRouter();
@@ -54,6 +55,9 @@ function routeChange(index: number) {
       break;
     case 10:
       router.push("/echart");
+      break;
+    case 11:
+      router.push("/el");
       break;
     default:
       console.log("没有找到对应的路由");
